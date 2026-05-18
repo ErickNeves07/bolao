@@ -1,0 +1,52 @@
+.loading { text-align: center; padding: 3rem; color: var(--text-muted); }
+
+.hero {
+  text-align: center;
+  padding: 2rem 0 1.5rem;
+}
+.hero h1 { font-size: 2rem; font-weight: 900; }
+.hero p  { color: var(--text-muted); margin-top: .4rem; }
+
+.liveAlert {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .8rem;
+  background: rgba(239,68,68,.15);
+  color: #EF4444;
+  border: 1px solid rgba(239,68,68,.3);
+  border-radius: 999px;
+  padding: .3rem 1rem;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  justify-content: center;
+  margin: 1.5rem 0 1rem;
+}
+.tab {
+  padding: .35rem .9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+.tab:hover   { background: var(--bg-card-h); color: var(--text); }
+.tabActive   { background: var(--primary); color: #0A0F1E; border-color: var(--primary); }
+
+.groupSection { margin-bottom: 2rem; }
+.groupTitle   { font-size: 1.1rem; font-weight: 700; margin-bottom: .8rem; color: var(--primary); }
+
+.matchGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: .8rem;
+}

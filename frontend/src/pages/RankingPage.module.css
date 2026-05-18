@@ -1,0 +1,70 @@
+.loading { text-align: center; padding: 3rem; color: var(--text-muted); }
+.header { text-align: center; padding: 1.5rem 0 .5rem; }
+.header h1 { font-size: 1.8rem; font-weight: 900; }
+.header p  { color: var(--text-muted); margin-top: .3rem; }
+
+/* Pódio */
+.podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: .5rem;
+  margin: 1.5rem 0 1rem;
+}
+.podiumItem {
+  display: flex; flex-direction: column; align-items: center; gap: .35rem;
+  padding: 1rem .8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform .2s, border-color .2s;
+  min-width: 100px;
+}
+.podiumItem:hover { transform: translateY(-4px); border-color: var(--primary); }
+.first  { border-color: #F5C518; background: rgba(245,197,24,.08); min-height: 160px; }
+.second { min-height: 130px; }
+.third  { min-height: 110px; }
+.podiumEmoji  { font-size: 1.8rem; }
+.podiumAvatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--primary); color: #0A0F1E;
+  font-size: 1.2rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.podiumName { font-size: .82rem; font-weight: 700; }
+.podiumPts  { font-size: 1rem; font-weight: 900; color: var(--primary); }
+
+/* Legend */
+.legend {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: .78rem; color: var(--text-muted);
+}
+
+/* Bet panel */
+.betPanel {
+  margin-top: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem;
+}
+.betPanel h3 { margin-bottom: 1rem; font-size: 1.1rem; }
+.betList { display: flex; flex-direction: column; gap: .4rem; }
+.betItem {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: .5rem; flex-wrap: wrap;
+}
+.teams { font-size: .85rem; color: var(--text-muted); flex: 1; }
+.betScore { font-weight: 700; font-size: .95rem; }
+.pts {
+  padding: .15rem .5rem;
+  border-radius: 6px;
+  font-size: .8rem;
+  font-weight: 700;
+}
+.pts[data-pts="5"] { background: rgba(245,197,24,.2); color: var(--primary); }
+.pts[data-pts="3"] { background: rgba(59,130,246,.2); color: #60A5FA; }
+.pts[data-pts="2"] { background: rgba(34,197,94,.2); color: var(--green); }
+.pts[data-pts="0"] { background: rgba(100,116,139,.2); color: var(--text-muted); }

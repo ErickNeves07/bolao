@@ -1,0 +1,105 @@
+.loading { text-align: center; padding: 3rem; color: var(--text-muted); }
+
+/* Login */
+.loginWrap { display: flex; justify-content: center; padding: 3rem 0; }
+.loginCard  {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 520px; width: 100%;
+  text-align: center;
+}
+.loginCard h2 { font-size: 1.5rem; margin-bottom: .4rem; }
+.loginCard p  { color: var(--text-muted); margin-bottom: 1.2rem; }
+
+.userGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+.userBtn {
+  display: flex; flex-direction: column; align-items: center; gap: .4rem;
+  padding: .7rem .4rem;
+  background: var(--bg-card-h);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer; color: var(--text);
+  font-size: .85rem; font-weight: 600;
+  transition: border-color .2s, background .2s;
+}
+.userBtn:hover { border-color: var(--primary); }
+.userAv {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--primary); color: #0A0F1E;
+  font-size: 1rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.userAv img { width: 100%; height: 100%; object-fit: cover; }
+
+.divider {
+  display: flex; align-items: center; gap: .5rem;
+  margin: 1rem 0;
+  color: var(--text-muted); font-size: .8rem;
+}
+.divider::before, .divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.newUser { display: flex; gap: .5rem; }
+
+/* Header apostas */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.header h1  { font-size: 1.6rem; font-weight: 900; }
+.sub        { color: var(--text-muted); margin-top: .25rem; font-size: .9rem; }
+.progress   { text-align: center; }
+.progress span  { font-size: 1.8rem; font-weight: 900; color: var(--primary); display: block; }
+.progress small { font-size: .75rem; color: var(--text-muted); }
+
+/* Tabs */
+.tabs { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
+.tab  {
+  padding: .3rem .8rem;
+  border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg-card); color: var(--text-muted);
+  font-size: .8rem; font-weight: 600; cursor: pointer; transition: all .2s;
+}
+.tab:hover  { color: var(--text); }
+.active     { background: var(--primary); color: #0A0F1E; border-color: var(--primary); }
+
+/* Grid apostas */
+.betGrid { display: flex; flex-direction: column; gap: .5rem; }
+.betRow  {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: .8rem;
+  position: relative;
+}
+.pastGame { opacity: .7; }
+.betTeam  { display: flex; align-items: center; gap: .5rem; font-size: .88rem; font-weight: 600; }
+.right    { justify-content: flex-end; flex-direction: row-reverse; }
+.betFlag  { width: 28px; height: 20px; object-fit: contain; border-radius: 3px; }
+.betInputs { display: flex; align-items: center; gap: .3rem; }
+.realScore {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: .78rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Salvar */
+.saveBar {
+  position: sticky; bottom: 1rem;
+  display: flex; justify-content: center;
+  margin-top: 1.5rem;
+}

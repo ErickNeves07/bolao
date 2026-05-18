@@ -1,0 +1,122 @@
+/* =============================================
+   GLOBAL STYLES — Bolão Copa 2026
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --bg:         #0A0F1E;
+  --bg-card:    rgba(255,255,255,0.05);
+  --bg-card-h:  rgba(255,255,255,0.09);
+  --border:     rgba(255,255,255,0.08);
+  --text:       #F0F2F5;
+  --text-muted: #8892A4;
+  --primary:    #F5C518;   /* amarelo Copa */
+  --green:      #22C55E;
+  --red:        #EF4444;
+  --blue:       #3B82F6;
+  --live:       #EF4444;
+  --radius:     12px;
+  --shadow:     0 4px 24px rgba(0,0,0,.4);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a { color: var(--primary); text-decoration: none; }
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 4px; }
+
+/* ---- Utilities ---- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: background .2s, border-color .2s;
+}
+.card:hover { background: var(--bg-card-h); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.badge-live  { background: rgba(239,68,68,.2);  color: #EF4444; }
+.badge-done  { background: rgba(100,116,139,.2); color: #94A3B8; }
+.badge-soon  { background: rgba(59,130,246,.2);  color: #60A5FA; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: opacity .2s, transform .1s;
+}
+.btn:active { transform: scale(.97); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn-primary  { background: var(--primary); color: #0A0F1E; }
+.btn-ghost    { background: var(--bg-card); color: var(--text); border: 1px solid var(--border); }
+.btn-danger   { background: rgba(239,68,68,.15); color: #EF4444; border: 1px solid rgba(239,68,68,.3); }
+
+/* ---- Live pulse ---- */
+@keyframes pulse-live {
+  0%,100% { opacity: 1; }
+  50%      { opacity: .35; }
+}
+.live-dot {
+  width: 8px; height: 8px;
+  background: var(--live);
+  border-radius: 50%;
+  animation: pulse-live 1.2s infinite;
+}
+
+/* ---- Inputs ---- */
+input[type=number], input[type=text] {
+  background: rgba(255,255,255,.07);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: .4rem .6rem;
+  font-size: .95rem;
+  outline: none;
+  width: 100%;
+  transition: border-color .2s;
+}
+input[type=number]:focus, input[type=text]:focus {
+  border-color: var(--primary);
+}
+input[type=number] { text-align: center; width: 52px; }
+
+/* ---- Score input — remove arrows ---- */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+/* ---- Divider ---- */
+.vs {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--text-muted);
+  padding: 0 .5rem;
+}

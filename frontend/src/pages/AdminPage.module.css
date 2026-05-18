@@ -1,0 +1,48 @@
+.loginWrap { display: flex; justify-content: center; padding: 3rem 0; }
+.loginCard {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem; max-width: 380px; width: 100%;
+  text-align: center;
+}
+.loginCard h2 { font-size: 1.5rem; margin-bottom: .3rem; }
+.loginCard p  { color: var(--text-muted); margin-bottom: 1.2rem; }
+.error { background: rgba(239,68,68,.15); color: #EF4444; border-radius: 8px; padding: .5rem .8rem; margin-bottom: .8rem; font-size: .85rem; }
+
+.wrap {}
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.header h1 { font-size: 1.6rem; font-weight: 900; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+.grid .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .8rem; }
+
+.apiNumbers { display: flex; gap: 1rem; margin-bottom: .8rem; }
+.apiNumbers > div { flex: 1; text-align: center; }
+.apiNumbers span  { display: block; font-size: 1.8rem; font-weight: 900; color: var(--primary); }
+.apiNumbers small { font-size: .72rem; color: var(--text-muted); }
+
+.progressBar {
+  height: 8px; background: var(--bg-card-h); border-radius: 4px; overflow: hidden;
+  margin-bottom: .5rem;
+}
+.progressBar > div { height: 100%; border-radius: 4px; transition: width .5s; }
+.lastReq { font-size: .75rem; color: var(--text-muted); }
+
+.desc { color: var(--text-muted); font-size: .87rem; line-height: 1.5; }
+.result { margin-top: .8rem; color: var(--green); font-size: .85rem; font-weight: 600; }
+
+.select {
+  width: 100%; background: rgba(255,255,255,.07); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); padding: .4rem .6rem; font-size: .9rem; outline: none;
+}
+.select option { background: #1a1e2e; }
+.avatarPreview { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-bottom: .5rem; }
+
+.userList { display: flex; flex-direction: column; gap: .4rem; max-height: 200px; overflow-y: auto; }
+.userItem { display: flex; align-items: center; gap: .6rem; font-size: .88rem; }
+.userAv {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: #0A0F1E;
+  font-size: .8rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; overflow: hidden;
+}
+.userAv img { width: 100%; height: 100%; object-fit: cover; }
+.betCount { margin-left: auto; font-size: .75rem; color: var(--text-muted); }
