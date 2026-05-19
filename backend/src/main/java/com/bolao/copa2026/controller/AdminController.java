@@ -65,4 +65,10 @@ public class AdminController {
             @RequestBody UserDTO.UpdateAvatarRequest req) {
         return ResponseEntity.ok(userService.updateAvatar(userId, req.getAvatarUrl()));
     }
+
+    @PostMapping("/admin/fetch-teams")
+    public ResponseEntity<String> fetchTeams() {
+        int count = footballApi.fetchAllTeams();
+        return ResponseEntity.ok("Times importados: " + count);
+    }
 }

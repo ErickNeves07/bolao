@@ -237,4 +237,37 @@ public class FootballApiService {
         usage.setLastRequestAt(OffsetDateTime.now());
         usageRepo.save(usage);
     }
+
+    @Transactional
+    public int fetchAllTeams() {
+    String url = baseUrl + "/teams?league=" + leagueId + "&season=" + season;
+    
+    if (!canMakeRequest()) return 0;
+
+    try {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("x-apisports-key", apiKey);
+        HttpEntity<Void> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> resp = restTemplate.exchange(
+            url, HttpMethod.GET, entity, String.class);
+
+        incrementUsage();
+
+        JsonNode root = objectMapper.readTree(resp.getBody());
+        JsonNode teams = root.path("response");
+
+        int count = 0;
+        for (JsonNode node : teams) {
+            JsonNode team = node.path("team");
+            getOrCreateTeam(team, "?"); // grupo vem depois via fixtures
+            count++;
+        }
+        return count;
+
+    } catch (Exception e) {
+        log.error("Erro ao buscar times: {}", e.getMessage(), e);
+        return 0;
+    }
+}
 }
