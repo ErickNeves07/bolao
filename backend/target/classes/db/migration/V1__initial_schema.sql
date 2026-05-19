@@ -17,7 +17,7 @@ CREATE TABLE teams (
     name        VARCHAR(100) NOT NULL,
     country     VARCHAR(100),
     flag_url    TEXT,
-    group_name  CHAR(1) NOT NULL  -- A, B, C, ..., L
+    group_name  VARCHAR(1) NOT NULL  -- A, B, C, ..., L
 );
 
 -- Partidas
@@ -26,7 +26,7 @@ CREATE TABLE matches (
     api_match_id    INTEGER NOT NULL UNIQUE,
     home_team_id    BIGINT NOT NULL REFERENCES teams(id),
     away_team_id    BIGINT NOT NULL REFERENCES teams(id),
-    group_name      CHAR(1) NOT NULL,
+    group_name      VARCHAR(1) NOT NULL,
     match_date      TIMESTAMPTZ NOT NULL,
     venue           VARCHAR(200),
     status          VARCHAR(20) NOT NULL DEFAULT 'SCHEDULED',
