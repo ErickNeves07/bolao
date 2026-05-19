@@ -98,8 +98,7 @@ public class FootballApiService {
 
         try {
             HttpHeaders headers = new HttpHeaders();
-            headers.set("X-RapidAPI-Key", apiKey);
-            headers.set("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com");
+            headers.set("x-apisports-key", apiKey);
             HttpEntity<Void> entity = new HttpEntity<>(headers);
 
             ResponseEntity<String> resp = restTemplate.exchange(

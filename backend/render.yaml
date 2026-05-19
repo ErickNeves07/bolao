@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bolao-copa2026
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: API_FOOTBALL_KEY
+        sync: false
