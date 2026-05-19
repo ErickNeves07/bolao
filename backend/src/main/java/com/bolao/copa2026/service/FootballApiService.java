@@ -186,18 +186,23 @@ public class FootballApiService {
     }
 
     private Team getOrCreateTeam(JsonNode node, String groupName) {
-        int apiId    = node.path("id").asInt();
-        String name  = node.path("name").asText("Unknown");
-        String logo  = node.path("logo").asText(null);
-
+        int apiId   = node.path("id").asInt();
+        String name = node.path("name").asText("Unknown");
+        String logo = node.path("logo").asText(null);
+    
         return teamRepo.findByApiTeamId(apiId).orElseGet(() -> {
-            Team t = Team.builder()
-                .apiTeamId(apiId)
-                .name(name)
-                .flagUrl(logo)
-                .groupName(groupName)
-                .build();
-            return teamRepo.save(t);
+            try {
+                Team t = Team.builder()
+                    .apiTeamId(apiId)
+                    .name(name)
+                    .flagUrl(logo)
+                    .groupName(groupName)
+                    .build();
+                return teamRepo.saveAndFlush(t);
+            } catch (Exception e) {
+                // Outro thread já inseriu, busca novamente
+                return teamRepo.findByApiTeamId(apiId).orElseThrow();
+            }
         });
     }
 
